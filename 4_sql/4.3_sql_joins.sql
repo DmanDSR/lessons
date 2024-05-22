@@ -13,7 +13,8 @@ USE bank;
 -- INNER JOIN. 
 -- Joining account and loan tables to get information about accounts with associated loans.
 -- As you can see, we use simply `join` to do an `inner join`.
-SELECT * FROM bank.account AS a
+SELECT * 
+FROM bank.account AS a
 JOIN bank.loan AS l
 ON a.account_id = l.account_id;
 
@@ -108,7 +109,8 @@ ON da.A1 = c.district_id;
 -- CHECK FOR UNDERSTANDING
 -- ==================================================
 
--- Extend the query below and list `district_name`, `client_id`, and `account_id` for those clients who are the owner of the account. Order the results by `district_name`:
+-- Extend the query below and list `district_name`, `client_id`, and `account_id` for 
+-- those clients who are the owner of the account. Order the results by `district_name`:
 
 -- ```sql
 -- select * from bank.disp as d
@@ -149,7 +151,8 @@ JOIN bank.disp d2
 ON d1.account_id = d2.account_id
 AND d1.type <> d2.type;
 
--- As you will see, there are repeated values for each of the account ids. Lets try to solve this problem now.
+-- As you will see, there are repeated values for each of the account ids. 
+-- Lets try to solve this problem now.
 -- Further refining the query to eliminate duplicate results.
 SELECT d1.account_id, d1.type AS Type1, d2.type AS Type2
 FROM bank.disp d1
